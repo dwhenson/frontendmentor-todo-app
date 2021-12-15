@@ -1,5 +1,6 @@
 import { todos } from "./../helpers/elements";
 import { updateCheckbox } from "./../helpers/update-checked";
+import { itemsCount } from "./../app/items-count";
 
 export function displayTodos() {
   const todoUl = document.querySelector("#todos-ul");
@@ -22,4 +23,5 @@ export function displayTodos() {
 
     todoUl.append(todoLi);
   }
+  itemsCount();
 }
