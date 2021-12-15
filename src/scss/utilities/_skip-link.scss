@@ -1,0 +1,38 @@
+/* Skip to main content */
+
+.skip-link {
+  position: absolute;
+  z-index: 100000;
+  display: inline-block;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+  padding: 0.7rem 1rem 0.5rem;
+  outline: 3px dashed var(--clr-tertiary-500);
+  background-color: var(--clr-tertiary-500);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--clr-neutral-100);
+}
+
+.skip-link:hover {
+  background: var(--clr-neutral-100);
+  color: var(--clr-tertiary-500);
+}
+
+.skip-link:not(:focus) {
+  position: absolute;
+  inline-size: 1px;
+  block-size: auto;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  margin: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Remove necessary focus style as main is the :target */
+main:focus {
+  outline: none;
+}

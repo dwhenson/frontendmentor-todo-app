@@ -1,0 +1,43 @@
+.hero {
+  display: grid;
+  gap: var(--spacer);
+  margin-inline-start: auto;
+
+  @include respond-to("large") {
+    grid-template-columns: 1fr 1fr;
+    gap: max(4vh, 1rem);
+  }
+
+  img {
+    box-shadow: none;
+  }
+
+  .hero-image {
+    @include respond-to("large") {
+      grid-area: 1 / 2 / -1 / -1;
+    }
+  }
+
+  .hero-text {
+    @include respond-to("large") {
+      grid-area: 1 / 1 / -1 / 2;
+      align-self: start;
+      background-color: var(--clr-neutral-100);
+    }
+
+    span {
+      color: var(--clr-tertiary-400);
+    }
+
+    .highlight {
+      transition: color 150ms;
+      text-decoration: underline;
+      text-transform: initial;
+      color: var(--clr-tertiary-500);
+
+      &:hover {
+        color: var(--clr-secondary-500);
+      }
+    }
+  }
+}

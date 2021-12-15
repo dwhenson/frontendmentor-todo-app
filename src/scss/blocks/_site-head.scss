@@ -1,0 +1,42 @@
+.site-head {
+  margin-block-start: max(4vh, 2rem);
+}
+
+.site-head__inner {
+  flex-direction: row;
+}
+
+.logo svg {
+  inline-size: 4rem;
+  block-size: 3rem;
+}
+
+.logo g {
+  transition: fill 150ms;
+  fill: var(--clr-primary-500);
+}
+
+.logo:hover g {
+  fill: var(--clr-tertiary-500);
+}
+
+.nav-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  a {
+    display: block;
+    min-inline-size: 10ch;
+    transition: color 150ms;
+    font-weight: 700;
+    text-align: center;
+    color: var(--clr-neutral-900);
+
+    &:hover,
+    &[data-state="active"],
+    &[aria-current="page"] {
+      color: var(--clr-tertiary-500);
+    }
+  }
+}

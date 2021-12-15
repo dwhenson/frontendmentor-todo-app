@@ -1,0 +1,22 @@
+.about {
+  display: grid;
+  gap: var(--spacer);
+
+  @include respond-to("large") {
+    grid-template-columns: 1fr 1fr;
+    gap: max(4vh, 1rem);
+  }
+
+  img {
+    box-shadow: none;
+  }
+
+  .about-image {
+    display: grid;
+    align-content: center;
+  }
+
+  .about-text {
+    scroll-margin-top: 3rem;
+  }
+}

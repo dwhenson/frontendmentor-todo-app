@@ -1,0 +1,75 @@
+/*  Custom Properties
+    ================================================== */
+
+:root {
+  /* Colors */
+  --clr-primary-100: hsl(204.49, 92.453%, 89.608%);
+  --clr-primary-200: hsl(206.94, 94.231%, 79.608%);
+  --clr-primary-300: hsl(209.17, 90%, 68.627%);
+  --clr-primary-400: hsl(211.89, 85.366%, 59.804%);
+  --clr-primary-500: hsl(214.55, 94.118%, 46.667%);
+  --clr-primary-600: hsl(217.31, 95.074%, 39.804%);
+  --clr-primary-700: hsl(219.75, 96.45%, 33.137%);
+  --clr-primary-800: hsl(222.14, 97.037%, 26.471%);
+  --clr-primary-900: hsl(225.14, 98.198%, 21.765%);
+  --clr-secondary-100: hsl(53.75, 100%, 90.588%);
+  --clr-secondary-200: hsl(53.053, 100%, 81.373%);
+  --clr-secondary-300: hsl(52.394, 100%, 72.157%);
+  --clr-secondary-400: hsl(51.525, 100%, 65.294%);
+  --clr-secondary-500: hsl(50.593, 100%, 53.725%);
+  --clr-secondary-600: hsl(49.515, 88.793%, 45.49%);
+  --clr-secondary-700: hsl(48.621, 90.625%, 37.647%);
+  --clr-secondary-800: hsl(47.66, 92.157%, 30%);
+  --clr-secondary-900: hsl(46.891, 95.2%, 24.51%);
+  --clr-tertiary-100: hsl(19.592, 89.091%, 89.216%);
+  --clr-tertiary-200: hsl(13.608, 90.654%, 79.02%);
+  --clr-tertiary-300: hsl(8.5106, 84.431%, 67.255%);
+  --clr-tertiary-400: hsl(3.2335, 76.256%, 57.059%);
+  --clr-tertiary-500: hsl(357.66, 93.607%, 42.941%);
+  --clr-tertiary-600: hsl(352.54, 94.652%, 36.667%);
+  --clr-tertiary-700: hsl(347.11, 96.129%, 30.392%);
+  --clr-tertiary-800: hsl(341.5, 96.774%, 24.314%);
+  --clr-tertiary-900: hsl(336.6, 98.039%, 20%);
+  --clr-neutral-100: hsla(0, 0%, 98%, 1);
+  --clr-neutral-200: hsla(0, 0%, 88%, 1);
+  --clr-neutral-300: hsla(0, 0%, 78%, 1);
+  --clr-neutral-400: hsla(0, 0%, 68%, 1);
+  --clr-neutral-500: hsla(0, 0%, 58%, 1);
+  --clr-neutral-600: hsla(0, 0%, 48%, 1);
+  --clr-neutral-700: hsla(0, 0%, 38%, 1);
+  --clr-neutral-800: hsla(0, 0%, 28%, 1);
+  --clr-neutral-900: hsla(225, 98%, 10%, 1);
+
+  /* Spacing */
+  --spacer: 1em;
+
+  /* Font sizes */
+  --step--1: clamp(0.89rem, 0.87rem + 0.07vw, 0.94rem);
+  // --step-0: clamp(1rem, 0.96rem + 0.18vw, 1.13rem);
+  --step-0: clamp(1.1rem, 1.06rem + 0.32vw, 1.35rem);
+  --step-1: clamp(1.27rem, 1.16rem + 0.51vw, 1.62rem);
+  // --step-3: clamp(1.42rem, 1.28rem + 0.74vw, 1.94rem);
+  --step-2: clamp(1.6rem, 1.39rem + 1.04vw, 2.33rem);
+  // --step-3: clamp(1.8rem, 1.52rem + 1.43vw, 2.8rem);
+  --step-3: clamp(2.03rem, 1.65rem + 1.9vw, 3.36rem);
+  --step-4: clamp(2.28rem, 1.78rem + 2.5vw, 4.03rem);
+  // --step-4: clamp(2.57rem, 1.92rem + 3.25vw, 4.84rem);
+
+  /* Shadows */
+  --shadow-color: 225deg 98% 10%;
+  --shadow-elevation-low: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.14),
+    0.6px 1px 1.6px -0.5px hsl(var(--shadow-color) / 0.28),
+    1.2px 2.1px 3.3px -1px hsl(var(--shadow-color) / 0.42);
+  --shadow-elevation-medium: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.15),
+    1.3px 2.3px 3.6px -0.3px hsl(var(--shadow-color) / 0.26),
+    2.8px 4.9px 7.6px -0.7px hsl(var(--shadow-color) / 0.36),
+    6.1px 10.7px 16.6px -1px hsl(var(--shadow-color) / 0.47);
+  --shadow-elevation-high: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.14),
+    2.6px 4.6px 7.1px -0.1px hsl(var(--shadow-color) / 0.19),
+    4.7px 8.3px 12.9px -0.3px hsl(var(--shadow-color) / 0.24),
+    7.1px 12.6px 19.5px -0.4px hsl(var(--shadow-color) / 0.29),
+    10.4px 18.3px 28.4px -0.6px hsl(var(--shadow-color) / 0.34),
+    15px 26.5px 41.1px -0.7px hsl(var(--shadow-color) / 0.39),
+    21.6px 38px 59px -0.9px hsl(var(--shadow-color) / 0.44),
+    30.6px 53.8px 83.6px -1px hsl(var(--shadow-color) / 0.49);
+}

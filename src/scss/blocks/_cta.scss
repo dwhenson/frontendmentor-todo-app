@@ -1,0 +1,37 @@
+.cta {
+  --bespoke-gap: calc(var(--spacer) * 3);
+
+  align-items: center;
+  padding-block-start: calc(var(--spacer) * 2.5);
+  padding-block-end: calc(var(--spacer) * 2.5);
+  text-align: center;
+
+  @include respond-to("medium") {
+    --bespoke-gap: calc(var(--spacer) * 1.5);
+
+    text-align: start;
+
+    &::after {
+      content: "";
+      position: relative;
+      display: block;
+      flex: 1 9999 100%;
+      block-size: 3px;
+      background: var(--clr-secondary-500);
+    }
+
+    h2 {
+      flex: 1 1 14ch;
+      color: var(--clr-primary-500);
+    }
+
+    a {
+      flex: 0 0 max-content;
+      order: 1;
+    }
+  }
+
+  span {
+    color: var(--clr-tertiary-500);
+  }
+}

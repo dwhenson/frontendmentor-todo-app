@@ -1,0 +1,13 @@
+/* Align flex children at small and large viewports */
+
+.split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bespoke-gap, var(--spacer));
+
+  @include respond-to("medium") {
+    flex-direction: row;
+  }
+}
