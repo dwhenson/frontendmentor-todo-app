@@ -6,5 +6,5 @@ export function remove(event) {
     (todo) => todo.id === Number.parseInt(event.target.dataset.id, 10)
   );
   todos.splice(position, 1);
-  displayTodos();
+  displayTodos(todos);
 }

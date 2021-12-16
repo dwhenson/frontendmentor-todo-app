@@ -1,12 +1,11 @@
-import { todos } from "./../helpers/elements";
 import { updateCheckbox } from "./../helpers/update-checked";
 import { itemsCount } from "./../app/items-count";
 
-export function displayTodos() {
+export function displayTodos(todoList) {
   const todoUl = document.querySelector("#todos-ul");
   todoUl.innerHTML = "";
 
-  for (const todo of todos) {
+  for (const todo of todoList) {
     const todoLi = document.createElement("li");
     todoLi.innerHTML = `
       <input type="checkbox" name=${todo.id} id=${

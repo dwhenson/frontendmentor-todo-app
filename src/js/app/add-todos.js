@@ -7,5 +7,5 @@ export function add() {
   if (!initialTodoText) return;
   todos.push({ todoText: initialTodoText, completed: false, id: randomId() });
   addInput.value = "";
-  displayTodos();
+  displayTodos(todos);
 }

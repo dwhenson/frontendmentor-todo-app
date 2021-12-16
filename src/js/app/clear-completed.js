@@ -8,5 +8,5 @@ export function clear() {
       clear();
     }
   }
-  displayTodos();
+  displayTodos(todos);
 }
