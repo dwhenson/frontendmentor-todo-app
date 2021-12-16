@@ -5,6 +5,7 @@ import { toggle } from "./../app/toggle-todos";
 import { clear } from "./../app/clear-completed";
 import { filterTodos } from "./../app/filter-todos";
 import { displayTodos } from "../app/display-todos";
+import { editTodos } from "../app/edit-todos";
 
 export function eventHandler(event) {
   const target = event.target.dataset.function;
@@ -27,5 +28,8 @@ export function eventHandler(event) {
   }
   if (target === "remaining" || target === "completed") {
     filterTodos(target);
+  }
+  if (target === "edit") {
+    editTodos(event);
   }
 }

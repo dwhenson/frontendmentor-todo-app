@@ -11,7 +11,10 @@ export function displayTodos(todoList) {
       <input type="checkbox" name=${todo.id} id=${
       todo.id
     } data-function="toggle" ${updateCheckbox(todo)}>
-      <label for=${todo.id}>${todo.todoText}</label>
+      <label class="visually-hidden" for=${todo.id}>${todo.todoText}</label>
+      <span contenteditable="true" data-function="edit" data-id="${todo.id}">${
+      todo.todoText
+    }</span>
     `;
 
     const removeButton = document.createElement("button");
