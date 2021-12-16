@@ -4,16 +4,19 @@ import { toggle } from "./../app/toggle-todos";
 import { clear } from "./../app/clear-completed";
 
 export function eventHandler(event) {
-  if (event.target.dataset.function === "add") {
+  const target = event.target.dataset.function;
+  if (!target) return;
+
+  if (target === "add") {
     add();
   }
-  if (event.target.dataset.function === "remove") {
+  if (target === "remove") {
     remove(event);
   }
-  if (event.target.dataset.function === "toggle") {
+  if (target === "toggle") {
     toggle(event);
   }
-  if (event.target.dataset.function === "clear") {
+  if (target === "clear") {
     clear();
   }
 }
