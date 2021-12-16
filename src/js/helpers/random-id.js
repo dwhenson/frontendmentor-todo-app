@@ -1,7 +1,6 @@
 export function randomId() {
-  return (
-    Number(String(Math.random()).slice(2)) +
-    Date.now() +
-    Math.round(performance.now())
-  ).toString(36);
+  return Math.random()
+    .toString(36)
+    .replace(/[^a-z]+/g, "")
+    .slice(2, 12);
 }
