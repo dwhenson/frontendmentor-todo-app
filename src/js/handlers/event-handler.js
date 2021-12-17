@@ -1,12 +1,11 @@
 import { todos } from "./../helpers/elements";
 import { add } from "./../app/add-todos";
 import { remove } from "./../app/remove-todos";
-import { toggle } from "./../app/toggle-todos";
+import { complete } from "./../app/complete-todos";
 import { clear } from "./../app/clear-completed";
 import { filterTodos } from "./../app/filter-todos";
 import { displayTodos } from "../app/display-todos";
 import { editTodos } from "../app/edit-todos";
-import { reorderTodos } from "../app/reorder-todos";
 
 export function eventHandler(event) {
   const target = event.target.dataset.function;
@@ -19,7 +18,7 @@ export function eventHandler(event) {
     remove(event);
   }
   if (target === "toggle") {
-    toggle(event);
+    complete(event);
   }
   if (target === "clear") {
     clear();
@@ -33,7 +32,4 @@ export function eventHandler(event) {
   if (target === "edit") {
     editTodos(event);
   }
-  // if (target === "drag") {
-  //   reorderTodos(event);
-  // }
 }

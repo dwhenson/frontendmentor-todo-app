@@ -1,17 +1,15 @@
+import { todoList } from "../helpers/elements";
 import { updateCheckbox } from "./../helpers/update-checked";
 import { itemsCount } from "./../app/items-count";
 
-export function displayTodos(todoList) {
-  const todoUl = document.querySelector("#todos-ul");
-  todoUl.innerHTML = "";
+export function displayTodos(todoItems) {
+  todoList.innerHTML = "";
 
-  for (const todo of todoList) {
+  for (const todo of todoItems) {
     const todoLi = document.createElement("li");
     todoLi.setAttribute("draggable", true);
     todoLi.dataset.function = "drag";
     todoLi.dataset.id = todo.id;
-    todoLi.setAttribute("ondragstart", "onDragStart(event);");
-
     todoLi.innerHTML = `
       <input type="checkbox" name=${todo.id} id=${todo.id} data-function="toggle" ${updateCheckbox(todo)}>
       <label class="visually-hidden" for=${todo.id}>${todo.todoText}</label>
@@ -24,7 +22,7 @@ export function displayTodos(todoList) {
     removeButton.textContent = "Remove";
     todoLi.append(removeButton);
 
-    todoUl.append(todoLi);
+    todoList.append(todoLi);
   }
   itemsCount();
 }

@@ -9,9 +9,11 @@
   </head>
 
   <body>
-    <div>
-      <button id="add-button" data-function="add">Add</button>
-      <input id="add-input" type="text" />
+    <div class="flow-content">
+      <div class="split">
+        <input id="add-input" type="text" />
+        <button id="add-button" data-function="add">Add</button>
+      </div>
       <ul id="todos-ul"></ul>
       <p><span id="items-left">0</span> Items Left</p>
 
@@ -20,26 +22,8 @@
       <button id="completed-button" data-function="completed">Completed</button>
 
       <button id="clear-button" data-function="clear">Clear Completed</button>
-      <div class="test" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+      <!-- <div class="test flow-content" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div> -->
     </div>
-    <script>
-      function onDragStart(event) {
-        event.dataTransfer.setData("text/plain", event.target.dataset.id);
-           event.currentTarget.style.backgroundColor = "yellow";
-      }
-
-      function onDragOver(event) {
-        event.preventDefault();
-        // event.target.dataTransfer.dropEffect = "move";
-      }
-
-      function onDrop(event) {
-        const id = event.dataTransfer.getData("text");
-        const draggableElement = document.querySelector([`[data-id="${id}"]`]);
-        const dropzone = event.target;
-        dropzone.append(draggableElement);
-      }
-    </script>
   </body>
 </html>
 
