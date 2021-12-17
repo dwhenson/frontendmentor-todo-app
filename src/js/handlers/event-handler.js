@@ -6,6 +6,7 @@ import { clear } from "./../app/clear-completed";
 import { filterTodos } from "./../app/filter-todos";
 import { displayTodos } from "../app/display-todos";
 import { editTodos } from "../app/edit-todos";
+import { reorderTodos } from "../app/reorder-todos";
 
 export function eventHandler(event) {
   const target = event.target.dataset.function;
@@ -32,4 +33,7 @@ export function eventHandler(event) {
   if (target === "edit") {
     editTodos(event);
   }
+  // if (target === "drag") {
+  //   reorderTodos(event);
+  // }
 }

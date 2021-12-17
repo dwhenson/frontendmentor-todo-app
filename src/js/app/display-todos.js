@@ -7,14 +7,15 @@ export function displayTodos(todoList) {
 
   for (const todo of todoList) {
     const todoLi = document.createElement("li");
+    todoLi.setAttribute("draggable", true);
+    todoLi.dataset.function = "drag";
+    todoLi.dataset.id = todo.id;
+    todoLi.setAttribute("ondragstart", "onDragStart(event);");
+
     todoLi.innerHTML = `
-      <input type="checkbox" name=${todo.id} id=${
-      todo.id
-    } data-function="toggle" ${updateCheckbox(todo)}>
+      <input type="checkbox" name=${todo.id} id=${todo.id} data-function="toggle" ${updateCheckbox(todo)}>
       <label class="visually-hidden" for=${todo.id}>${todo.todoText}</label>
-      <span contenteditable="true" data-function="edit" data-id="${todo.id}">${
-      todo.todoText
-    }</span>
+      <span contenteditable="true" data-function="edit" data-id="${todo.id}">${todo.todoText}</span>
     `;
 
     const removeButton = document.createElement("button");
