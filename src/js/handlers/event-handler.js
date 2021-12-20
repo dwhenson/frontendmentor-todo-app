@@ -8,6 +8,10 @@ import { displayTodos } from "../app/display-todos";
 import { editTodos } from "../app/edit-todos";
 import { dragTodos } from "../app/drag-todos";
 
+/**
+ * Handles all the events and calls relavent functions
+ * @param      {object}  event   The event object
+ */
 export function eventHandler(event) {
   const target = event.target.dataset.function;
   if (!target) return;

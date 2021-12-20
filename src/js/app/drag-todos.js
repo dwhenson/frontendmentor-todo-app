@@ -1,5 +1,6 @@
-let dragSourceElement;
-
+/**
+ * Returns a local storage representation of the reorderd todo list
+ */
 function toLocalStorage() {
   var reOrderedTodos = [...document.querySelectorAll("[draggable]")];
   const todos = [];
@@ -12,6 +13,12 @@ function toLocalStorage() {
   });
   localStorage.setItem("savedTodos", JSON.stringify(todos));
 }
+
+// Holds the value of the element being dragged
+let dragSourceElement;
+
+/* Functions fired on different parts of the drag-drop API
+/* ==================================================== */
 
 function dragStart(event) {
   this.style.opacity = "0.4";
@@ -52,6 +59,10 @@ function dragEnd(event) {
   toLocalStorage();
 }
 
+/**
+ * Adds all nexessary drag and drop events to the li listItems
+ * @param {object}  element  The element to add the listeners to
+ */
 function addEventsDragAndDrop(element) {
   element.addEventListener("dragstart", dragStart, false);
   element.addEventListener("dragenter", dragEnter, false);
@@ -61,6 +72,9 @@ function addEventsDragAndDrop(element) {
   element.addEventListener("dragend", dragEnd, false);
 }
 
+/**
+ * Enables todo items to be draggable
+ */
 export function dragTodos() {
   var listItems = document.querySelectorAll("[draggable]");
   for (const item of listItems) {

@@ -14,12 +14,12 @@ export function displayTodos(todos, filter) {
   if (localStorage.getItem("savedTodos")) {
     todos = JSON.parse(localStorage.getItem("savedTodos"));
   }
-  if (filter === "completed") {
-    todos = todos.filter((todo) => todo.completed);
-  }
-  if (filter === "remaining") {
-    todos = todos.filter((todo) => !todo.completed);
-  }
+  // if (filter === "completed") {
+  //   todos = todos.filter((todo) => todo.completed);
+  // }
+  // if (filter === "remaining") {
+  //   todos = todos.filter((todo) => !todo.completed);
+  // }
 
   // Create an li for each todo item
   for (const todo of todos) {
