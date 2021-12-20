@@ -1,5 +1,18 @@
 let dragSourceElement;
 
+function toLocalStorage() {
+  var reOrderedTodos = [...document.querySelectorAll("[draggable]")];
+  const todos = [];
+  reOrderedTodos.map((todo) => {
+    todos.push({
+      todoText: todo.querySelector("label").textContent,
+      completed: todo.querySelector("input").checked,
+      id: todo.dataset.id,
+    });
+  });
+  localStorage.setItem("savedTodos", JSON.stringify(todos));
+}
+
 function dragStart(event) {
   this.style.opacity = "0.4";
   event.dataTransfer.effectAllowed = "move";
@@ -31,15 +44,12 @@ function dragDrop(event) {
 }
 
 function dragEnd(event) {
-  // var listItens = document.querySelectorAll("[draggable]");
-  // Array.prototype.forEach.call(listItens, function (item) {
-  //   item.classList.remove("over");
-  // });
   const listItems = document.querySelectorAll("[draggable]");
   for (const item of listItems) {
     item.classList.remove("over");
   }
   this.style.opacity = "1";
+  toLocalStorage();
 }
 
 function addEventsDragAndDrop(element) {
@@ -52,8 +62,8 @@ function addEventsDragAndDrop(element) {
 }
 
 export function dragTodos() {
-  var listItens = document.querySelectorAll("[draggable]");
-  Array.prototype.forEach.call(listItens, function (item) {
+  var listItems = document.querySelectorAll("[draggable]");
+  for (const item of listItems) {
     addEventsDragAndDrop(item);
-  });
+  }
 }

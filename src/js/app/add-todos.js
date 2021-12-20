@@ -7,5 +7,6 @@ export function add() {
   if (!initialTodoText) return;
   todos.push({ todoText: initialTodoText, completed: false, id: randomId() });
   addInput.value = "";
+  localStorage.setItem("savedTodos", JSON.stringify(todos));
   displayTodos(todos);
 }

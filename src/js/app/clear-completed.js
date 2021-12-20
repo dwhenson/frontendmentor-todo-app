@@ -8,5 +8,6 @@ export function clear() {
       clear();
     }
   }
+  localStorage.setItem("savedTodos", JSON.stringify(todos));
   displayTodos(todos);
 }

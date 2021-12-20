@@ -5,6 +5,11 @@ import { dragTodos } from "./drag-todos";
 
 export function displayTodos(todoItems) {
   todoList.innerHTML = "";
+  // Check if there are stored todos, use that object if it exists
+  if (localStorage.getItem("savedTodos")) {
+    todoItems = JSON.parse(localStorage.getItem("savedTodos"));
+    console.log(todoItems);
+  }
 
   for (const todo of todoItems) {
     const todoLi = document.createElement("li");
@@ -25,6 +30,8 @@ export function displayTodos(todoItems) {
 
     todoList.append(todoLi);
   }
+  // Update todo count
   itemsCount();
+  // Readd listeners to all todos
   dragTodos();
 }
