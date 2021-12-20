@@ -1,6 +1,7 @@
 import { todoList } from "../helpers/elements";
 import { updateCheckbox } from "./../helpers/update-checked";
 import { itemsCount } from "./../app/items-count";
+import { dragTodos } from "./drag-todos";
 
 export function displayTodos(todoItems) {
   todoList.innerHTML = "";
@@ -25,4 +26,5 @@ export function displayTodos(todoItems) {
     todoList.append(todoLi);
   }
   itemsCount();
+  dragTodos();
 }
