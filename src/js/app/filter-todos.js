@@ -61,12 +61,12 @@ function showRemaining(todos) {
 export function filterTodos(target) {
   if (target === "completed") {
     // const completed = todos.filter((todo) => todo.completed);
-    // displayTodos(completed);
-    showCompleted(todos);
+    displayTodos(todos, "completed");
+    // showCompleted(todos);
   }
   if (target === "remaining") {
     // const remaining = todos.filter((todo) => !todo.completed);
-    // displayTodos(remaining);
-    showRemaining(todos);
+    displayTodos(todos, "remaining");
+    // showRemaining(todos);
   }
 }
