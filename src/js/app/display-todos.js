@@ -10,7 +10,6 @@ import { dragTodos } from "./drag-todos";
 export function displayTodos(todoListItems, filter) {
   // Clear the current content of the ul
   todoList.innerHTML = "";
-<<<<<<< HEAD
   // Check if there are stored todoList, use that object if it exists
   if (localStorage.getItem("savedTodos")) {
     todoListItems = JSON.parse(localStorage.getItem("savedTodos"));
@@ -21,8 +20,6 @@ export function displayTodos(todoListItems, filter) {
   if (filter === "remaining") {
     todoListItems = todos.filter((todo) => !todo.completed);
   }
-=======
->>>>>>> parent of 8591c9d... ✅ ADD: local storage of todos
 
   // Create an li for each todo item
   for (const todo of todoListItems) {
@@ -45,10 +42,6 @@ export function displayTodos(todoListItems, filter) {
     todoList.append(todoLi);
   }
   itemsCount();
-<<<<<<< HEAD
-  // Sdd listeners to all todos
-=======
->>>>>>> parent of 8591c9d... ✅ ADD: local storage of todos
   dragTodos();
   // console.log(todos);
 }

@@ -10,10 +10,7 @@ export function remove(event) {
   const position = todos.findIndex((todo) => todo.id === event.target.dataset.id);
   // Remove the todo
   todos.splice(position, 1);
-<<<<<<< HEAD
   // Update local storage and rendered content
   localStorage.setItem("savedTodos", JSON.stringify(todos));
-=======
->>>>>>> parent of 8591c9d... ✅ ADD: local storage of todos
   displayTodos(todos);
 }

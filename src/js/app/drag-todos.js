@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { todos } from "./../helpers/elements";
 /**
  * Returns a local storage representation of the reorderd todo list
@@ -23,11 +22,6 @@ let dragSourceElement;
 
 /* Functions fired on different parts of the drag-drop API
 /* ==================================================== */
-
-=======
-let dragSourceElement;
-
->>>>>>> parent of 8591c9d... ✅ ADD: local storage of todos
 function dragStart(event) {
   this.style.opacity = "0.4";
   event.dataTransfer.effectAllowed = "move";
@@ -59,15 +53,12 @@ function dragDrop(event) {
 }
 
 function dragEnd(event) {
-  // var listItens = document.querySelectorAll("[draggable]");
-  // Array.prototype.forEach.call(listItens, function (item) {
-  //   item.classList.remove("over");
-  // });
   const listItems = document.querySelectorAll("[draggable]");
   for (const item of listItems) {
     item.classList.remove("over");
   }
   this.style.opacity = "1";
+  toLocalStorage();
 }
 
 /**
