@@ -11,6 +11,5 @@ export function editTodos(event) {
   // Update local storage and rendered content
   event.target.addEventListener("blur", function (event) {
     todoToEdit.todoText = event.target.textContent;
-    localStorage.setItem("savedTodos", JSON.stringify(todos));
   });
 }
