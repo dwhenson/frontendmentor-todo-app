@@ -1,9 +1,7 @@
-// import { todos } from "./../helpers/elements";
 /**
  * Returns a local storage representation of the reorderd todo list
  */
 function toLocalStorage() {
-  // todos = [];
   localStorage.removeItem("savedTodos");
   const reOrderedTodos = [...document.querySelectorAll("[draggable]")];
   const todosToSave = [];

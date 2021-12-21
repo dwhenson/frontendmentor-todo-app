@@ -15,10 +15,10 @@ export function displayTodos(todoListItems, filter) {
     todoListItems = JSON.parse(localStorage.getItem("savedTodos"));
   }
   if (filter === "completed") {
-    todoListItems = todos.filter((todo) => todo.completed);
+    todoListItems = todoListItems.filter((todo) => todo.completed);
   }
   if (filter === "remaining") {
-    todoListItems = todos.filter((todo) => !todo.completed);
+    todoListItems = todoListItems.filter((todo) => !todo.completed);
   }
 
   // Create an li for each todo item

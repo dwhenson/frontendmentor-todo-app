@@ -6,10 +6,13 @@ import { displayTodos } from "./display-todos";
  * @param      {string}  target  The value to filter by (from button)
  */
 export function filterTodos(target) {
+  const filteredTodos = JSON.parse(!!localStorage.getItem("savedTodos"))
+    ? JSON.parse(localStorage.getItem("savedTodos"))
+    : todos;
   if (target === "completed") {
-    displayTodos(todos, "completed");
+    displayTodos(filteredTodos, "completed");
   }
   if (target === "remaining") {
-    displayTodos(todos, "remaining");
+    displayTodos(filteredTodos, "remaining");
   }
 }
