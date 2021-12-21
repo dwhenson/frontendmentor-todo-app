@@ -14,6 +14,7 @@ export function displayTodos(todoListItems, filter) {
   if (localStorage.getItem("savedTodos")) {
     todoListItems = JSON.parse(localStorage.getItem("savedTodos"));
   }
+  // If filters are being used then update todoListItems
   if (filter === "completed") {
     todoListItems = todoListItems.filter((todo) => todo.completed);
   }
@@ -42,10 +43,9 @@ export function displayTodos(todoListItems, filter) {
     removeButton.dataset.id = todo.id;
     removeButton.textContent = "Remove";
     todoLi.append(removeButton);
-
     todoList.append(todoLi);
   }
+  // Update item count and re-add drag event listeners on new list items
   itemsCount();
   dragTodos();
-  // console.log(todos);
 }

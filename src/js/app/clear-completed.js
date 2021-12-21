@@ -1,11 +1,11 @@
 import { todos } from "./../helpers/elements";
 import { displayTodos } from "./../app/display-todos";
-import { itemsCount } from "./items-count";
 
 /**
  * Clear completed todos
  */
 export function clear() {
+  // Get items from localStorage if they exist, otherwise use todos
   const itemsToRender = JSON.parse(!!localStorage.getItem("savedTodos"))
     ? JSON.parse(localStorage.getItem("savedTodos"))
     : todos;

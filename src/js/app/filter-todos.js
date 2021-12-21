@@ -6,6 +6,7 @@ import { displayTodos } from "./display-todos";
  * @param      {string}  target  The value to filter by (from button)
  */
 export function filterTodos(target) {
+  // Get items from localStorage if they exist, otherwise use todos
   const filteredTodos = JSON.parse(!!localStorage.getItem("savedTodos"))
     ? JSON.parse(localStorage.getItem("savedTodos"))
     : todos;

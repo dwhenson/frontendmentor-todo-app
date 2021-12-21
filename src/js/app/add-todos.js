@@ -6,11 +6,12 @@ import { displayTodos } from "./../app/display-todos";
  * Add todo to the array
  */
 export function add() {
+  // Get items from localStorage if they exist, otherwise use todos
   const itemsToRender = JSON.parse(!!localStorage.getItem("savedTodos"))
     ? JSON.parse(localStorage.getItem("savedTodos"))
     : todos;
   const initialTodoText = addInput.value.trim();
-  // If value exsits, add to array with default values, and clear input
+  // If value exists, add to array with default values, and clear input
   if (!initialTodoText) return;
   itemsToRender.push({ todoText: initialTodoText, completed: false, id: randomId() });
   addInput.value = "";

@@ -2,8 +2,11 @@
  * Returns a local storage representation of the reorderd todo list
  */
 function toLocalStorage() {
+  // Clear localStorage
   localStorage.removeItem("savedTodos");
+  // Get updated order
   const reOrderedTodos = [...document.querySelectorAll("[draggable]")];
+  // Save key data to new array
   const todosToSave = [];
   reOrderedTodos.map((todo) => {
     todosToSave.push({
@@ -13,7 +16,6 @@ function toLocalStorage() {
     });
   });
   localStorage.setItem("savedTodos", JSON.stringify(todosToSave));
-  // console.log(reOrderedTodos);
 }
 
 // Holds the value of the element being dragged

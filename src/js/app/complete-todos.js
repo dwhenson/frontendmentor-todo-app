@@ -6,7 +6,7 @@ import { displayTodos } from "./../app/display-todos";
  * @param      {object}  event   The event object
  */
 export function complete(event) {
-  // localStorage.removeItem("savedTodos");
+  // Get items from localStorage if they exist, otherwise use todos
   const itemsToRender = JSON.parse(!!localStorage.getItem("savedTodos"))
     ? JSON.parse(localStorage.getItem("savedTodos"))
     : todos;
@@ -15,6 +15,5 @@ export function complete(event) {
   event.target.checked ? (todo.completed = true) : (todo.completed = false);
   // Update local storage and rendered content
   localStorage.setItem("savedTodos", JSON.stringify(itemsToRender));
-
   displayTodos(itemsToRender);
 }
