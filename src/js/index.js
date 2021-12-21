@@ -11,4 +11,4 @@ const itemsToRender = JSON.parse(!!localStorage.getItem("savedTodos"))
 
 // Render default list of todos
 displayTodos(itemsToRender);
-// And save to local storage??
+// CHECK save to local storage??

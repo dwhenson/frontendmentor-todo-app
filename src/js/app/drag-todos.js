@@ -1,20 +1,21 @@
-import { todos } from "./../helpers/elements";
+// import { todos } from "./../helpers/elements";
 /**
  * Returns a local storage representation of the reorderd todo list
  */
 function toLocalStorage() {
-  todos = [];
+  // todos = [];
   localStorage.removeItem("savedTodos");
-  var reOrderedTodos = [...document.querySelectorAll("[draggable]")];
+  const reOrderedTodos = [...document.querySelectorAll("[draggable]")];
+  const todosToSave = [];
   reOrderedTodos.map((todo) => {
-    todos.push({
+    todosToSave.push({
       todoText: todo.querySelector("label").textContent,
       completed: todo.querySelector("input").checked,
       id: todo.dataset.id,
     });
   });
-  localStorage.setItem("savedTodos", JSON.stringify(todos));
-  console.log(todos);
+  localStorage.setItem("savedTodos", JSON.stringify(todosToSave));
+  // console.log(reOrderedTodos);
 }
 
 // Holds the value of the element being dragged
@@ -62,7 +63,7 @@ function dragEnd(event) {
 }
 
 /**
- * Adds all nexessary drag and drop events to the li listItems
+ * Adds all necessary drag and drop events to the li listItems
  * @param {object}  element  The element to add the listeners to
  */
 function addEventsDragAndDrop(element) {
@@ -78,8 +79,8 @@ function addEventsDragAndDrop(element) {
  * Enables todo items to be draggable
  */
 export function dragTodos() {
-  var listItens = document.querySelectorAll("[draggable]");
-  Array.prototype.forEach.call(listItens, function (item) {
-    addEventsDragAndDrop(item);
-  });
+  const todoList = [...document.querySelectorAll("[draggable]")];
+  for (const todo of todoList) {
+    addEventsDragAndDrop(todo);
+  }
 }
