@@ -6,11 +6,14 @@ import { displayTodos } from "./../app/display-todos";
  * @param      {object}  event   The event object
  */
 export function remove(event) {
+  const itemsToRender = JSON.parse(!!localStorage.getItem("savedTodos"))
+    ? JSON.parse(localStorage.getItem("savedTodos"))
+    : todos;
   // Get the index of the todo to remove based on unique id
-  const position = todos.findIndex((todo) => todo.id === event.target.dataset.id);
+  const position = itemsToRender.findIndex((todo) => todo.id === event.target.dataset.id);
   // Remove the todo
-  todos.splice(position, 1);
+  itemsToRender.splice(position, 1);
   // Update local storage and rendered content
-  localStorage.setItem("savedTodos", JSON.stringify(todos));
-  displayTodos(todos);
+  localStorage.setItem("savedTodos", JSON.stringify(itemsToRender));
+  displayTodos(itemsToRender);
 }
