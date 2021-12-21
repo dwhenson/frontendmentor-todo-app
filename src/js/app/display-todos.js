@@ -14,16 +14,28 @@ export function displayTodos(todoListItems, filter) {
   if (localStorage.getItem("savedTodos")) {
     todoListItems = JSON.parse(localStorage.getItem("savedTodos"));
   }
+  if (todoListItems.length === 0) {
+    todoList.innerHTML = "<li>Nothing to see here, add some todos!</li>";
+    return;
+  }
   // If filters are being used then update todoListItems
   if (filter === "completed") {
     todoListItems = todoListItems.filter((todo) => todo.completed);
+    if (todoListItems.length === 0) {
+      todoList.innerHTML = "<li>Nothing to see here. Complete some todos!</li>";
+      return;
+    }
   }
   if (filter === "remaining") {
     todoListItems = todoListItems.filter((todo) => !todo.completed);
+    if (todoListItems.length === 0) {
+      todoList.innerHTML = "<li>Nothing to see here. Good job!</li>";
+      return;
+    }
   }
 
   if (todoListItems.length === 0) {
-    todoList.innerHTML = "<li>Nothing to see here, add some todos!</li>";
+    todoList.innerHTML = "<li>Nothing to see here. Add some todos!</li>";
     return;
   }
   // Create an li for each todo item
