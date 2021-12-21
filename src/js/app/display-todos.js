@@ -21,6 +21,10 @@ export function displayTodos(todoListItems, filter) {
     todoListItems = todoListItems.filter((todo) => !todo.completed);
   }
 
+  if (todoListItems.length === 0) {
+    todoList.innerHTML = "<li>Nothing to see here, add some todos!</li>";
+    return;
+  }
   // Create an li for each todo item
   for (const todo of todoListItems) {
     const todoLi = document.createElement("li");

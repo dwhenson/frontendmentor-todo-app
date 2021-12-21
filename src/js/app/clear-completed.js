@@ -11,7 +11,6 @@ export function clear() {
     : todos;
   // Iterate over array, if completed remove and call function again
   const filteredTodos = itemsToRender.filter((todo) => !todo.completed);
-  console.log(filteredTodos);
   // Update local storage and rendered content
   localStorage.setItem("savedTodos", JSON.stringify(filteredTodos));
   displayTodos(filteredTodos);
