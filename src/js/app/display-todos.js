@@ -1,4 +1,4 @@
-import { todoList } from "../helpers/elements";
+import { todoList, todos } from "./../helpers/elements";
 import { updateCheckbox } from "./../helpers/update-checked";
 import { itemsCount } from "./../app/items-count";
 import { dragTodos } from "./drag-todos";
@@ -7,22 +7,22 @@ import { dragTodos } from "./drag-todos";
  * Renders the todo list items and remove buttons to the HTML
  * @param      {array}  todos  The todo items
  */
-export function displayTodos(todos, filter) {
+export function displayTodos(todoListItems, filter) {
   // Clear the current content of the ul
   todoList.innerHTML = "";
-  // Check if there are stored todos, use that object if it exists
+  // Check if there are stored todoList, use that object if it exists
   if (localStorage.getItem("savedTodos")) {
-    todos = JSON.parse(localStorage.getItem("savedTodos"));
+    todoListItems = JSON.parse(localStorage.getItem("savedTodos"));
   }
-  // if (filter === "completed") {
-  //   todos = todos.filter((todo) => todo.completed);
-  // }
-  // if (filter === "remaining") {
-  //   todos = todos.filter((todo) => !todo.completed);
-  // }
+  if (filter === "completed") {
+    todoListItems = todos.filter((todo) => todo.completed);
+  }
+  if (filter === "remaining") {
+    todoListItems = todos.filter((todo) => !todo.completed);
+  }
 
   // Create an li for each todo item
-  for (const todo of todos) {
+  for (const todo of todoListItems) {
     const todoLi = document.createElement("li");
     todoLi.setAttribute("draggable", true);
     todoLi.dataset.function = "drag";
@@ -32,7 +32,7 @@ export function displayTodos(todos, filter) {
       <label class="visually-hidden" for=${todo.id}>${todo.todoText}</label>
       <span contenteditable="true" data-function="edit" data-id="${todo.id}">${todo.todoText}</span>
     `;
-    // Create a remvoe button for each todo item
+    // Create a remove button for each todo item
     const removeButton = document.createElement("button");
     removeButton.dataset.function = "remove";
     removeButton.dataset.id = todo.id;
@@ -43,6 +43,7 @@ export function displayTodos(todos, filter) {
   }
   // Update todo count
   itemsCount();
-  // Readd listeners to all todos
+  // Sdd listeners to all todos
   dragTodos();
+  // console.log(todos);
 }

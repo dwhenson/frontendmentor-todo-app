@@ -10,6 +10,7 @@ export function complete(event) {
   const todo = todos.find((todo) => todo.id === event.target.id);
   event.target.checked ? (todo.completed = true) : (todo.completed = false);
   // Update local storage and rendered content
+  console.log(todos);
   localStorage.setItem("savedTodos", JSON.stringify(todos));
   displayTodos(todos);
 }

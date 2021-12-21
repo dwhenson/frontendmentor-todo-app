@@ -1,9 +1,11 @@
+import { todos } from "./../helpers/elements";
 /**
  * Returns a local storage representation of the reorderd todo list
  */
 function toLocalStorage() {
+  todos = [];
+  localStorage.removeItem("savedTodos");
   var reOrderedTodos = [...document.querySelectorAll("[draggable]")];
-  const todos = [];
   reOrderedTodos.map((todo) => {
     todos.push({
       todoText: todo.querySelector("label").textContent,
@@ -12,6 +14,7 @@ function toLocalStorage() {
     });
   });
   localStorage.setItem("savedTodos", JSON.stringify(todos));
+  console.log(todos);
 }
 
 // Holds the value of the element being dragged
