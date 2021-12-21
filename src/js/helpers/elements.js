@@ -1,7 +1,7 @@
 export const todoList = document.querySelector("#todos-ul");
 export const itemsLeft = document.querySelector("#items-left");
 export const addInput = document.querySelector("#add-input");
-
+// export const todos = [];
 // Default to values
 export const todos = [
   { todoText: "Click on the left to complete the todo", completed: false, id: "aaaaaa" },
