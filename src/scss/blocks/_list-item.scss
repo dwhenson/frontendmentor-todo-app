@@ -1,0 +1,44 @@
+li[draggable] {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  padding: 1rem 1.5rem;
+  transition: all 200ms;
+  cursor: move;
+  will-change: transform;
+  -webkit-user-select: text;
+  user-select: none;
+  border-block-end: solid 2px var(--clr-neutral-300);
+  border-block-start: solid 2px transparent;
+
+  &:hover button {
+    visibility: initial;
+  }
+
+  [contenteditable] {
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  input {
+    scale: 2;
+    margin-inline-end: 1.5rem;
+  }
+
+  button {
+    visibility: hidden;
+    padding: 0.5rem;
+    border: 0;
+    margin-inline-start: auto;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}
+
+// li[draggable]:hover button {
+//   visibility: initial;
+// }

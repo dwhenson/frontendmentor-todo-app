@@ -4,25 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List - Frontend Mentor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="scss/global.scss" />
     <script defer type="module" src="js/index.js"></script>
   </head>
 
   <body>
     <div class="flow-content">
+      <h1>Todo</h1>
       <div class="split">
-        <input id="add-input" type="text" placeholder="Add a new todo here"/>
+        <input id="add-input" type="text" placeholder="Add a new todo here" />
         <button id="add-button" data-function="add">Add</button>
       </div>
-      <ul id="todos-ul"></ul>
-      <p><span id="items-left">0</span> Items Left</p>
-
-      <button id="all-button" data-function="all">All</button>
-      <button id="remaining-button" data-function="remaining">Remaining</button>
-      <button id="completed-button" data-function="completed">Completed</button>
-
-      <button id="clear-button" data-function="clear">Clear Completed</button>
+      <div class="list-wrapper">
+        <ul id="todos-ul" role="list"></ul>
+        <div class="split">
+          <p><span id="items-left">0</span> Items Left</p>
+          <div class="split filters">
+            <button id="all-button" data-function="all">All</button>
+            <button id="remaining-button" data-function="remaining">Remaining</button>
+            <button id="completed-button" data-function="completed">Completed</button>
+          </div>
+          <button id="clear-button" data-function="clear">Clear Completed</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
-

@@ -12,16 +12,22 @@
 body {
   display: grid;
   place-items: center;
-  font-family: sans-serif;
+  background-color: var(--clr-neutral-300);
+  font-family: "Josefin Sans", sans-serif;
   font-size: var(--step-0);
+  text-align: left;
 }
 
-[draggable] {
-  position: relative;
-  transition: all 200ms;
-  cursor: move;
-  will-change: transform;
-  user-select: none;
+h1 {
+  font-size: var(--step-3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-neutral-100);
+}
+
+.list-wrapper {
+  border-radius: 1rem;
+  background-color: var(--clr-neutral-200);
 }
 
 .over {
@@ -45,3 +51,8 @@ body {
 @import "utilities/skip-link";
 @import "utilities/split";
 @import "utilities/visually-hidden";
+
+/* ==================================================
+   Blocks
+   ================================================== */
+@import "blocks/list-item";
