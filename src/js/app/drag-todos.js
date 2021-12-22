@@ -1,3 +1,5 @@
+import { displayTodos } from "./../app/display-todos";
+
 /**
  * Returns a local storage representation of the reorderd todo list
  */
@@ -15,6 +17,7 @@ function toLocalStorage() {
       id: todo.dataset.id,
     });
   });
+  displayTodos(todosToSave);
   localStorage.setItem("savedTodos", JSON.stringify(todosToSave));
 }
 
