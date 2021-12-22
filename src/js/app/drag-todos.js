@@ -22,7 +22,7 @@ function toLocalStorage() {
 }
 
 // Holds the value of the element being dragged
-// let dragSourceElement;
+let dragSourceElement;
 
 /* Functions fired on different parts of the drag-drop API
 /* ==================================================== */
