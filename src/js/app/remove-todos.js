@@ -10,8 +10,7 @@ export function remove(event) {
     ? JSON.parse(localStorage.getItem("savedTodos"))
     : todos;
   // Get the index of the todo to remove based on unique id
-  // const position = itemsToRender.findIndex((todo) => todo.id === event.target.dataset.id);
-  const position = itemsToRender.findIndex((todo) => todo.id === event.target.closest("data-id"));
+  const position = itemsToRender.findIndex((todo) => todo.id === event.target.dataset.id);
   // Remove the todo
   itemsToRender.splice(position, 1);
   // Update local storage and rendered content
