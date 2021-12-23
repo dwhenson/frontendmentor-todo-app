@@ -10,10 +10,28 @@ export function filterTodos(target) {
   const filteredTodos = JSON.parse(!!localStorage.getItem("savedTodos"))
     ? JSON.parse(localStorage.getItem("savedTodos"))
     : todos;
+
+  const buttons = document.querySelectorAll(".filters-wrapper button");
+
+  for (const button of buttons) {
+    if (button.classList.contains("js-active")) {
+      button.classList.remove("js-active");
+    }
+  }
+
+  for (const button of buttons) {
+    if (target === button.dataset.function) {
+      button.classList.add("js-active");
+    }
+  }
+
   if (target === "completed") {
     displayTodos(filteredTodos, "completed");
   }
   if (target === "remaining") {
     displayTodos(filteredTodos, "remaining");
+  }
+  if (target === "all") {
+    displayTodos(filteredTodos);
   }
 }

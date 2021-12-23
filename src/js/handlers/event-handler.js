@@ -27,10 +27,7 @@ export function eventHandler(event) {
   if (target === "clear") {
     clear();
   }
-  if (target === "all") {
-    displayTodos(todos);
-  }
-  if (target === "remaining" || target === "completed") {
+  if (target === "remaining" || target === "completed" || target === "all") {
     filterTodos(target);
   }
   if (target === "edit") {
