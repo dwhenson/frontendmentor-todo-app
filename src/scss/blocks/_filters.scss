@@ -5,6 +5,10 @@
   gap: var(--spacer);
   padding: 1.25rem 1.5rem;
   font-size: var(--step--1);
+
+  p {
+    color: var(--clr-neutral-400);
+  }
 }
 
 // Outside of filters-wrapper so need to reappl styles
@@ -34,4 +38,16 @@ button[data-function] {
   padding: 0;
   border: 0;
   background-color: transparent;
+  transition: color 200ms;
+  color: var(--clr-neutral-400);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--clr-neutral-100);
+  }
+}
+
+button.js-active {
+  font-weight: 700;
+  color: var(--clr-primary-100);
 }
