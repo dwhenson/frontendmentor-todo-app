@@ -3,16 +3,16 @@ li[draggable] {
   display: flex;
   align-items: baseline;
   padding: 1rem 1.5rem;
+  border-block-start: solid 2px transparent;
+  border-block-end: solid 2px var(--clr-neutral-300);
   transition: all 200ms;
   cursor: move;
   will-change: transform;
   -webkit-user-select: text;
   user-select: none;
-  border-block-end: solid 2px var(--clr-neutral-300);
-  border-block-start: solid 2px transparent;
 
   &:hover button {
-    visibility: initial;
+    opacity: 1;
   }
 
   [contenteditable] {
@@ -26,7 +26,7 @@ li[draggable] {
   }
 
   button {
-    visibility: hidden;
+    opacity: 0;
     padding: 0.5rem;
     border: 0;
     margin-inline-start: auto;
@@ -38,7 +38,3 @@ li[draggable] {
     pointer-events: none;
   }
 }
-
-// li[draggable]:hover button {
-//   visibility: initial;
-// }
