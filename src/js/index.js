@@ -4,6 +4,7 @@ import { displayTodos } from "./app/display-todos";
 
 document.addEventListener("click", eventHandler);
 document.addEventListener("change", eventHandler);
+document.addEventListener("change", eventHandler);
 
 const itemsToRender = JSON.parse(!!localStorage.getItem("savedTodos"))
   ? JSON.parse(localStorage.getItem("savedTodos"))

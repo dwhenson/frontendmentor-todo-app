@@ -6,7 +6,6 @@ import { clear } from "./../app/clear-completed";
 import { filterTodos } from "./../app/filter-todos";
 import { displayTodos } from "../app/display-todos";
 import { editTodos } from "../app/edit-todos";
-import { dragTodos } from "../app/drag-todos";
 
 /**
  * Handles all the events and calls relavent functions

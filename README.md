@@ -17,4 +17,4 @@ Your users should be able to:
 Notes:
 
 - Don't confuse DOM elements with data object
-- Cannot find a way to insert between elements without using a library or something - only append to end of list
+- Using insertAdjacentHTML means can either not add to top or not add to bottom - to fix would need to use index of drop element or something?
