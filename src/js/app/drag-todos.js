@@ -29,38 +29,37 @@ let dragSourceElement;
 function dragStart(event) {
   this.style.opacity = "0.4";
   event.dataTransfer.effectAllowed = "move";
-  event.dataTransfer.setData("text/html", this.innerHTML);
+  event.dataTransfer.setData("text/html", this.outerHTML);
   dragSourceElement = this;
-}
-
-function dragEnter(event) {
-  this.classList.add("over");
-}
-
-function dragLeave(event) {
-  event.stopPropagation();
-  this.classList.remove("over");
 }
 
 function dragOver(event) {
   event.preventDefault();
+  this.classList.add("over");
   event.dataTransfer.dropEffect = "move";
   return false;
 }
 
+function dragLeave(event) {
+  this.classList.remove("over");
+}
+
 function dragDrop(event) {
+  event.stopPropagation(); // Stops some browsers from redirecting.
+
   if (dragSourceElement !== this) {
-    dragSourceElement.innerHTML = this.innerHTML;
-    this.innerHTML = event.dataTransfer.getData("text/html");
+    dragSourceElement.remove();
+    const dropHTML = event.dataTransfer.getData("text/html");
+    this.insertAdjacentHTML("beforebegin", dropHTML);
+    const dropElement = this.previousSibling;
+    addEventsDragAndDrop(dropElement);
   }
+  this.classList.remove("over");
   return false;
 }
 
 function dragEnd(event) {
-  const listItems = document.querySelectorAll("[draggable]");
-  for (const item of listItems) {
-    item.classList.remove("over");
-  }
+  this.classList.remove("over");
   this.style.opacity = "1";
   toLocalStorage();
 }
@@ -71,7 +70,6 @@ function dragEnd(event) {
  */
 function addEventsDragAndDrop(element) {
   element.addEventListener("dragstart", dragStart, false);
-  element.addEventListener("dragenter", dragEnter, false);
   element.addEventListener("dragover", dragOver, false);
   element.addEventListener("dragleave", dragLeave, false);
   element.addEventListener("drop", dragDrop, false);
