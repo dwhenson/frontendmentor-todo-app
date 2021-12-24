@@ -47,10 +47,14 @@ export function displayTodos(todoListItems, filter) {
     todoLi.dataset.function = "drag";
     todoLi.dataset.id = todo.id;
     todoLi.innerHTML = `
-      <input type="checkbox" name=${todo.id} id=${todo.id} data-function="toggle" ${updateCheckbox(todo)}>
-      <label class="visually-hidden" for=${todo.id}>${todo.todoText}</label>
-      <span contenteditable="true" data-function="edit" data-id="${todo.id}">${todo.todoText}</span>
-    `;
+      <label class="custom-input" for=${todo.id}>
+        <input aria-labelledby="${todo.id}-label" type="checkbox" name=${todo.id} id=${
+      todo.id
+    } data-function="toggle" ${updateCheckbox(todo)}>
+      </label>
+      <span contenteditable="true" id="${todo.id}-label" data-function="edit" data-id="${todo.id}">${
+      todo.todoText
+    }</span>`;
     // Create a remove button for each todo item
     const removeButton = document.createElement("button");
     removeButton.dataset.function = "remove";

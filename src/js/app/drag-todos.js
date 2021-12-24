@@ -12,7 +12,7 @@ function toLocalStorage() {
   const todosToSave = [];
   reOrderedTodos.map((todo) => {
     todosToSave.push({
-      todoText: todo.querySelector("label").textContent,
+      todoText: todo.querySelector("span").textContent,
       completed: todo.querySelector("input").checked,
       id: todo.dataset.id,
     });
@@ -30,6 +30,7 @@ function dragStart(event) {
   this.style.opacity = "0.4";
   event.dataTransfer.effectAllowed = "move";
   event.dataTransfer.setData("text/html", this.outerHTML);
+  // console.log(event.dataTransfer);
   dragSourceElement = this;
 }
 

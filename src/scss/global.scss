@@ -10,8 +10,7 @@
 /* Base Styles
    ================================================== */
 body {
-  background-color: var(--clr-neutral-300);
-  background-color: hotpink;
+  background-color: var(--clr-neutral-400);
   font-family: "Josefin Sans", sans-serif;
   font-size: var(--step-0);
   text-align: left;
@@ -57,3 +56,4 @@ h1 {
 @import "blocks/list-item";
 @import "blocks/add-item";
 @import "blocks/filters";
+@import "blocks/checkboxes";
