@@ -13,6 +13,7 @@ export function complete(event) {
   // Get the todo based on unique id, and update completed value in todo array
   const todo = itemsToRender.find((todo) => todo.id === event.target.id);
   event.target.checked ? (todo.completed = true) : (todo.completed = false);
+
   // Update local storage and rendered content
   localStorage.setItem("savedTodos", JSON.stringify(itemsToRender));
   displayTodos(itemsToRender);

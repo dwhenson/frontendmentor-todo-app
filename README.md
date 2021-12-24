@@ -18,3 +18,6 @@ Notes:
 
 - Don't confuse DOM elements with data object
 - Using insertAdjacentHTML means can either not add to top or not add to bottom - to fix would need to use index of drop element or something?
+- No ticks on chrome
+- DD not working on FF
+- iOS nightmare

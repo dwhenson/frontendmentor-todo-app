@@ -52,9 +52,9 @@ export function displayTodos(todoListItems, filter) {
       todo.id
     } data-function="toggle" ${updateCheckbox(todo)}>
       </label>
-      <span contenteditable="true" id="${todo.id}-label" data-function="edit" data-id="${todo.id}">${
-      todo.todoText
-    }</span>`;
+      <span contenteditable="true" id="${todo.id}-label" data-function="edit" data-id="${todo.id}" ${
+      updateCheckbox(todo) ? "class='js-completed'" : ""
+    }>${todo.todoText}</span>`;
     // Create a remove button for each todo item
     const removeButton = document.createElement("button");
     removeButton.dataset.function = "remove";

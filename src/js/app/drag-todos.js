@@ -30,7 +30,6 @@ function dragStart(event) {
   this.style.opacity = "0.4";
   event.dataTransfer.effectAllowed = "move";
   event.dataTransfer.setData("text/html", this.outerHTML);
-  // console.log(event.dataTransfer);
   dragSourceElement = this;
 }
 
@@ -48,7 +47,7 @@ function dragLeave(event) {
 function dragDrop(event) {
   event.stopPropagation(); // Stops some browsers from redirecting.
 
-  if (dragSourceElement != this) {
+  if (dragSourceElement !== this) {
     dragSourceElement.remove();
     const dropHTML = event.dataTransfer.getData("text/html");
     this.insertAdjacentHTML("beforebegin", dropHTML);
