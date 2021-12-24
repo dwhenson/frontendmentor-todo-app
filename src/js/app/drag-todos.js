@@ -48,7 +48,7 @@ function dragLeave(event) {
 function dragDrop(event) {
   event.stopPropagation(); // Stops some browsers from redirecting.
 
-  if (dragSourceElement !== this) {
+  if (dragSourceElement != this) {
     dragSourceElement.remove();
     const dropHTML = event.dataTransfer.getData("text/html");
     this.insertAdjacentHTML("beforebegin", dropHTML);

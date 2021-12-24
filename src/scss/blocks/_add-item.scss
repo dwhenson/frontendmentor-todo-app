@@ -1,7 +1,7 @@
 .input-wrapper {
   display: flex;
   align-items: baseline;
-  padding: 1.5rem;
+  padding: 1.25rem;
 
   input[type="text"] {
     display: inline-block;
@@ -9,9 +9,5 @@
     border: 0;
     line-height: 1;
     cursor: pointer;
-  }
-
-  input[type="checkbox"] {
-    // margin-inline-end: 1.5rem;
   }
 }
