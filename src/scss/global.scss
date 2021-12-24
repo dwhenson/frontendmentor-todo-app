@@ -10,7 +10,10 @@
 /* Base Styles
    ================================================== */
 body {
-  background-color: var(--clr-neutral-400);
+  background-color: var(--clr-neutral-200);
+  background-image: url("../../images/bg-desktop-light.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
   font-family: "Josefin Sans", sans-serif;
   font-size: var(--step-0);
   text-align: left;
@@ -20,11 +23,13 @@ h1 {
   font-size: var(--step-3);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--clr-neutral-100);
+  color: var(--clr-neutral-200);
 }
 
 .list-wrapper {
   border-radius: 0.5rem;
+  box-shadow: 0 4.2px 2.2px rgba(0, 0, 0, 0.02), 0 10px 5.3px rgba(0, 0, 0, 0.028), 0 18.8px 10px rgba(0, 0, 0, 0.035),
+    0 33.5px 17.9px rgba(0, 0, 0, 0.042), 0 62.7px 33.4px rgba(0, 0, 0, 0.05), 0 150px 80px rgba(0, 0, 0, 0.07);
   background-color: var(--clr-neutral-200);
 }
 
