@@ -9,16 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="scss/global.scss" />
-  <script defer type="module" src="js/index.js"></script>
+  <script defer src="js/index.js"></script>
 </head>
 
 <body class="align-content">
-  <div class="flow-section">
+  <main class="flow-section">
     <h1>Todo</h1>
     <div class="list-wrapper">
       <div class="input-wrapper">
-        <label class="custom-input" for="example-checkbox" aria-hidden="">
-        <input type="checkbox" id="example-checkbox" disabled>
+        <label class="custom-input" for="example-checkbox" aria-hidden="true">
+          <input type="checkbox" id="example-checkbox" disabled>
         </label>
         <input id="add-input" type="text" placeholder="Add a new todo here" data-function="add" />
         <label class="visually-hidden" for="add-input">Add a new todo here</label>
@@ -41,7 +41,7 @@
       <button id="remaining-button" data-function="remaining">Active</button>
       <button id="completed-button" data-function="completed">Completed</button>
     </div>
-  </div>
+  </main>
 </body>
 
 </html>
