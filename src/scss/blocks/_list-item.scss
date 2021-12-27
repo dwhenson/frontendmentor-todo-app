@@ -26,11 +26,8 @@ li[draggable] {
     }
   }
 
-  input {
-    margin-inline-end: 1.5rem;
-  }
-
   button {
+    z-index: 1;
     opacity: 0;
     padding: 0.5rem;
     border: 0;
