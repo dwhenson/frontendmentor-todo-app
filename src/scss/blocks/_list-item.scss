@@ -16,7 +16,7 @@ li[draggable] {
   }
 
   [contenteditable] {
-    display: inline-block;
+    flex: 1 1 0;
     max-inline-size: calc(100% - 3rem);
     line-height: 1;
     cursor: pointer;
@@ -29,14 +29,19 @@ li[draggable] {
 
   button {
     opacity: 0;
-    // padding: 0.5rem;
+    padding: 0.5rem;
     border: 0;
     margin-inline-start: auto;
+    margin-inline-start: 0.25rem;
     background-color: transparent;
     cursor: pointer;
   }
 
   svg {
     pointer-events: none;
+  }
+
+  .over {
+    transform: scale(1.1);
   }
 }
