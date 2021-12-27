@@ -45,9 +45,9 @@ button[data-function] {
   &:hover {
     color: var(--clr-neutral-100);
   }
-}
 
-button.js-active {
-  font-weight: 700;
-  color: var(--clr-primary-100);
+  &.js-active {
+    font-weight: 700;
+    color: var(--clr-primary-100);
+  }
 }
