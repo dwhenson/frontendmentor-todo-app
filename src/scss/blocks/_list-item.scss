@@ -1,7 +1,7 @@
 li[draggable] {
   position: relative;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   padding: 1rem 1.5rem;
   border-block-start: solid 2px transparent;
   border-block-end: solid 2px var(--clr-neutral-300);
@@ -16,6 +16,7 @@ li[draggable] {
   }
 
   [contenteditable] {
+    max-inline-size: fit-content;
     line-height: 1;
     cursor: pointer;
 

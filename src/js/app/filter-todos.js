@@ -11,14 +11,13 @@ export function filterTodos(target) {
     ? JSON.parse(localStorage.getItem("savedTodos"))
     : todos;
 
+  // Remove filter highlight and reapply to active fitler
   const buttons = document.querySelectorAll(".filters-wrapper button");
-
   for (const button of buttons) {
     if (button.classList.contains("js-active")) {
       button.classList.remove("js-active");
     }
   }
-
   for (const button of buttons) {
     if (target === button.dataset.function) {
       button.classList.add("js-active");
