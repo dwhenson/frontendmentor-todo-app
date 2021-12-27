@@ -12,7 +12,7 @@ export function filterTodos(target) {
     : todos;
 
   // Remove filter highlight and reapply to active fitler
-  const buttons = document.querySelectorAll(".filters-wrapper button");
+  const buttons = document.querySelectorAll("button");
   for (const button of buttons) {
     if (button.classList.contains("js-active")) {
       button.classList.remove("js-active");
