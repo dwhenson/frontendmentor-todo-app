@@ -1,6 +1,6 @@
 # Frontend Mentor - Todo app
 
-![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Todo app coding challenge](./images/desktop-preview.jpg)
 
 Apparently at some point in their career every architect will design a chair. In the same way, it seems every wannabe developer will one day create a todo list. So here's mine.
 
