@@ -2,7 +2,7 @@
 
 ![Design preview for the Todo app coding challenge](./src/images/desktop-preview.jpg)
 
-Apparently at some point in their career every architect will design a chair. In the same way, it seems every wannabe developer will one day create a todo list. So here's mine.
+Apparently at some point in their career every architect will design a chair. In the same way, it seems every wannabe developer will one day create a todo list. So [here's mine](https://frontendmentor-todolist-app.vercel.app/).
 
 ## Users should be able to:
 
@@ -18,8 +18,8 @@ Apparently at some point in their career every architect will design a chair. In
 ## Lessons learnt
 
 - 💡 I spent some time confused between updating the object storing the todo list data, and what was rendered in the UI. In the end I found setting and getting `localStorage` useful for ensuring that I was always working with the latest data, but this does necessitate a lot of rendering and re-rendering.
-- 💡 I like relying on the browser to do the work for me whenever possible, but I have to say I've found the drag and drop API hard work. Hard work to get working, and double hard work on browser inconsistencies. I think I have this mostly sorted, but there are still problems with FireFox on mobile.
-- 💡 I was focused on the JS for this challenge and wasn't too concerned about the dark-light mode requirement. I thought I would add this in at the end, but I had not properly planned out my CSS custom properties to match up and enable an easy over-ride. I need to plan this from the outset.
+- 💡 I like relying on the browser to do the work for me whenever possible, but I have to say I've found the drag and drop API hard work. Hard work to get working, and double hard work on browser inconsistencies. I think I have this mostly sorted, but there are still problems with Firefox mobile.
+- 💡 I was focused on the JS for this challenge and wasn't too concerned about the dark-light mode requirement. I thought I would add this in at the end, but I had not properly planned out my CSS custom properties to match up and enable an easy over-ride. I need to plan this from the outset next time.
 - 💡 Don't used IDs for element hooks in JavaScript. This seemed fine at first but then I needed to duplicate some of the HTML for small and wide viewports. As I had used IDs as the hook, this meant duplicating them, which causes errors. Better to stick to data-attributes.
 
 ## Problems
